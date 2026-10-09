@@ -24,7 +24,7 @@
  * Level 1, never Level 0. Thresholds: 0 / 10 / 25 / 50 / 100 points.
  *
  * File resolution mirrors tuxedo's own:
- *   todo file: $TODO_FILE -> $TODO_DIR/todo.txt -> ./todo.txt
+ *   todo file: $TODO_FILE ->$TODO_DIR/todo.txt -> ./todo.txt
  *   done file: $DONE_FILE -> <todo dir>/done.txt
  *
  * Storage owned by sfetch itself:
@@ -72,8 +72,8 @@ typedef struct {
   char code;
 } DefaultAttr;
 static const DefaultAttr default_attrs[NUM_ATTRS] = {
-    {"Knowledge", 'k'}, {"Guts", 'g'},     {"Proficiency", 'p'},
-    {"Charm", 'c'},     {"Kindness", 'n'},
+    {"Knowledge", 'k'}, {"Vitality", 'v'},    {"Diligence", 'd'},
+    {"Charm", 'c'},     {"Proficiency", 'p'},
 };
 
 static int completed_total = 0;
@@ -621,7 +621,7 @@ static void build_task_info(const char *todo_path) {
   add_info_line("");
   add_info_line("");
   add_info_line("%s@sfetch", user ? user : "you");
-  add_info_line(RULE);
+  add_info_line("%s", RULE);
   add_info_line("source: %s", todo_path);
   add_info_line("");
 
@@ -642,7 +642,7 @@ static void build_task_info(const char *todo_path) {
                   completed_unmatched);
   else
     add_info_line("tasks: %d done", completed_total);
-  add_info_line(RULE);
+  add_info_line("%s", RULE);
 }
 
 static void cmd_fetch(int show_tasks) {
