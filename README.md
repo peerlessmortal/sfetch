@@ -32,3 +32,7 @@ make
 # Optional: Install globally to /usr/local/bin
 sudo make install
 ```
+
+---
+Claude and Gemini were used in making this.
+---
